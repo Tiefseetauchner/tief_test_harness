@@ -1,0 +1,7 @@
+builders:
+  harness_registry:
+    import: "package:tief_test_harness/src/harness_registry_builder.dart"
+    builder_factories: ["harnessRegistryBuilder"]
+    build_extensions: { ".dart": [".harnesses.th.dart"] }
+    auto_apply: root_package
+    build_to: source
