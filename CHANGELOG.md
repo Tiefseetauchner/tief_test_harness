@@ -2,6 +2,6 @@
 
 Initial release for test harnesses.
 
-## 0.2.0
+## 0.1.1
 
 Significantly downgrade many dependencies to make compatible for finamp.
