@@ -1,4 +1,4 @@
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:tief_test_harness/src/registry/harness_entry.dart';
 import 'package:tief_test_harness/src/registry/harness_entry_validator.dart';
 

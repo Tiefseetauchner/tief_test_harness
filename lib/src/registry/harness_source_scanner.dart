@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:build/build.dart';
 import 'package:glob/glob.dart';
 import 'package:path/path.dart' as p;
@@ -8,10 +8,7 @@ import '../harness_annotation.dart';
 import 'harness_entry.dart';
 
 class HarnessSourceScanner {
-  static const _harnessChecker = TypeChecker.typeNamed(
-    RegisterHarness,
-    inPackage: 'tief_test_harness',
-  );
+  static const _harnessChecker = TypeChecker.fromRuntime(RegisterHarness);
 
   final BuildStep buildStep;
   final String sourceGlob;
@@ -37,13 +34,6 @@ class HarnessSourceScanner {
         if (reader.read('group').stringValue != group) continue;
 
         final element = annotated.element;
-        if (element is! TopLevelFunctionElement) {
-          log.warning(
-            '@RegisterHarness on ${element.name} in ${asset.path} is '
-            'ignored: only top-level functions are supported.',
-          );
-          continue;
-        }
 
         entries.add(
           HarnessEntry(
