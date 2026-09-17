@@ -9,7 +9,7 @@ import 'registry/harness_registry_writer.dart';
 import 'registry/harness_source_scanner.dart';
 
 class HarnessRegistryBuilder implements Builder {
-  static const _registryChecker = TypeChecker.fromRuntime(
+  static const _registryChecker = TypeChecker.typeNamed(
     GenerateHarnessRegistry,
   );
 

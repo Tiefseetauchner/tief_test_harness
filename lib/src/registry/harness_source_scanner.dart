@@ -1,4 +1,3 @@
-import 'package:analyzer/dart/element/element2.dart';
 import 'package:build/build.dart';
 import 'package:glob/glob.dart';
 import 'package:path/path.dart' as p;
@@ -8,7 +7,7 @@ import '../harness_annotation.dart';
 import 'harness_entry.dart';
 
 class HarnessSourceScanner {
-  static const _harnessChecker = TypeChecker.fromRuntime(RegisterHarness);
+  static const _harnessChecker = TypeChecker.typeNamed(RegisterHarness);
 
   final BuildStep buildStep;
   final String sourceGlob;
